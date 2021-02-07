@@ -1,0 +1,90 @@
+
+<p-toast [style]="{ marginTop: '80px' }" key="myToast"></p-toast>
+<div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url(assets/images/background/login-register.jpg) no-repeat center center;">
+    <div class="auth-box m-3 m-md-0">
+       
+
+
+<section id="wrapper" class="new-login-register">
+ 
+    <div class="new-login-box">
+        <div class="white-box">
+            <h3 class="box-title m-b-0">Sign UP to Admin</h3> 
+            <form   (ngSubmit)="frmRef.form.valid && onSubmit();" #frmRef="ngForm"  novalidate >
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <input  #LoginUserName='ngModel' class="form-control" type="text" required="" [(ngModel)]="UserName" name="UserName" placeholder="Username" required>
+
+                        </div>
+                      
+                        <!-- <input class="form-control" type="text" required="" placeholder="Name"> -->
+                     </div>
+                     <div *ngIf="frmRef.submitted && LoginUserName.invalid  " class="invalid-feedback">
+                        <div *ngIf="LoginUserName.errors.required">يجب إدخال إسم المستخدم</div>
+                    </div> 
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                     
+                      <div class="row">
+                          <label></label>
+                      </div>
+                      <div class="row">
+                          <input class="form-control" name="password" minlength="4" #LoginPassword='ngModel' [(ngModel)]="password" type="password" required="" placeholder="Password" required>
+                    
+                      </div>
+                      <div *ngIf="frmRef.submitted && LoginPassword.invalid " class="invalid-feedback">
+                          <div *ngIf="LoginPassword.errors.required">يجب إدخال  كلمة المرور</div>
+                          <div *ngIf="LoginPassword.errors.minlength">كلمة المرور يجب ألا تقل عن أربعة حروف</div>
+                      </div>
+                      <br/>
+                  
+                  </div>
+                  </div>
+                   <div class="form-group">
+                    <div class="col-xs-12">
+                   
+                      <div class="row">
+                          <input class="form-control" (blur)="CheckConfirm()" name="Confirmpassword" minlength="4"  [(ngModel)]="Confirmpassword" type="password" required="" placeholder="Confirmpassword" required>
+                    
+                      </div>
+                    
+                      <br/>
+                    
+                  </div>
+                  </div>
+                  <div class="form-group ">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <input  #mailUserName='ngModel' class="form-control" type="email" required="" [(ngModel)]="mail" name="mail" placeholder="mail" required>
+
+                        </div>
+                        <br/>
+                        <!-- <input class="form-control" type="text" required="" placeholder="Name"> -->
+                     </div>
+                     <div *ngIf="frmRef.submitted && mailUserName.invalid  " class="invalid-feedback">
+                        <div *ngIf="mailUserName.errors.required">mail</div>
+                    </div> 
+                   
+                </div>
+                
+                  <div class="form-group text-center m-t-20">
+                    <div class="col-xs-12">
+                        <button [disabled]="!disabled" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Sign Up</button>
+                    </div>
+                </div>
+                <br/>
+                
+                <div class="form-group m-b-0">
+                    <div class="col-sm-12 text-center">
+                        <p>Already have an account? <a href="/login" class="text-danger m-l-5"><b>Sign In</b></a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+    </div>
+</div>

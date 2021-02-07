@@ -1,0 +1,27 @@
+{
+ 
+        "NameError": "عربي",
+        "Description":"وصف",
+        "Search":"بحث",
+
+        "Add":"اضافة",
+        
+        "Name":"الاسم",
+        "CategoryName":"القسم الريئسي",
+        "SubCategoryName":"القسم الفرعي",
+        "ServiceCondition":"نوع الخدمة",
+      "select":"اختر",
+      "save":"حفظ",
+      "cancel":"الغاء",
+      "Action":"العمليات",
+      "Free":"مجاني",
+      "Paid":"مدفوع",
+      "CountOfServices":"عدد الخدمات",
+      "Rating":"التقيم",
+      "TimeType":"نوع المدة",
+      "TimeValue":"العدد",
+      "Price":"السعر",
+      "day":"يوم",
+      "month":"شهر",
+      "year":"سنة"
+}

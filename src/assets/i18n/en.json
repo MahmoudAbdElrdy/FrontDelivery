@@ -1,0 +1,26 @@
+{
+  
+        "NameError": "this English",
+        "Description":"Description",
+        "Search":"Search",
+        "Add":"Add",
+        
+        "Name":"Name",
+        "CategoryName":"category Name",
+        "SubCategoryName":"Sub category Name",
+        "ServiceCondition":"Service Condition",
+          "select":"select",
+          "save":"save",
+      "cancel":"cancel",
+      "Action":"Actions",
+      "Free":"Free",
+      "Paid":"Paid",
+      "CountOfServices":"CountOfServices",
+      "Rating":"Rating",
+      "TimeType":"TimeType",
+      "TimeValue":"TimeValue",
+      "Price":"Price",
+      "day":"day",
+      "month":"month",
+      "year":"year"
+}

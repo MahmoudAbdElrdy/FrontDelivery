@@ -1,0 +1,127 @@
+<!-- ============================================================== -->
+<!-- toggle and nav items -->
+<!-- ============================================================== -->
+<ul class="navbar-nav float-left mr-auto">
+    <!-- ============================================================== -->
+    <!-- Logo -->
+    <!-- ============================================================== -->
+    <li class="nav-item border-right">
+        <a class="nav-link navbar-brand d-none d-md-block" href="/Home">
+          
+           
+        </a>
+    </li>
+    <!-- ============================================================== -->
+    <!-- Messages -->
+    <!-- ============================================================== -->
+    <!-- <li class="nav-item dropdown" ngbDropdown display="static">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)" id="2"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="font-18 mdi mdi-gmail"></i>
+            <div class="notify">
+                <span class="heartbit"></span>
+                <span class="point"></span>
+            </div>
+        </a>
+      
+    </li> -->
+    <!-- ============================================================== -->
+    <!-- Comment -->
+    <!-- ============================================================== -->
+    <!-- <li class="nav-item dropdown" ngbDropdown display="static">
+        <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="mdi mdi-check-circle font-18"></i>
+            <div class="notify">
+                <span class="heartbit"></span>
+                <span class="point"></span>
+            </div>
+        </a>
+        <div class="dropdown-menu dropdown-menu-left mailbox" ngbDropdownMenu>
+            <ul class="list-style-none">
+                <li>
+                    <div class="drop-title border-bottom">You have 3 new Tasks</div>
+                </li>
+              
+                <li>
+                    <a class="nav-link text-center mb-1 text-dark" href="javascript:void(0);"> <strong>See all
+                            Tasks</strong> <i class="fa fa-angle-right"></i> </a>
+                </li>
+            </ul>
+        </div>
+    </li> -->
+    <!-- ============================================================== -->
+    <!-- mega menu -->
+    <!-- ============================================================== -->
+    <!-- <li class="nav-item mega-dropdown" ngbDropdown [autoClose]="false">
+        <a ngbDropdownToggle class="nav-link waves-effect waves-dark" href="javascript:void(0)" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <span class="d-none d-md-block">Mega
+                <i class="icon-options-vertical"></i>
+            </span>
+            <span class="d-block d-md-none">
+                <i class="mdi mdi-dialpad font-24"></i>
+            </span>
+        </a>
+         <div class="dropdown-menu" ngbDropdownMenu>
+           <app-Mega></app-Mega>
+        </div> 
+    </li> -->
+    <!-- ============================================================== -->
+    <!-- End mega menu -->
+    <!-- ============================================================== -->
+</ul>
+<!-- ============================================================== -->
+<!-- Right side toggle and nav items -->
+<!-- ============================================================== -->
+<ul class="navbar-nav float-right">
+       <!-- <li class="nav-item search-box d-none d-md-block">
+        <form class="app-search d-none d-lg-block">
+            <input type="text" class="form-control" placeholder="Search...">
+            <a href="" class="active"><i class="fa fa-search"></i></a>
+        </form>
+    </li> -->
+     <li class="nav-item" ngbDropdown placement="bottom-right">
+        <a ngbDropdownToggle class="nav-link text-muted waves-effect waves-dark pro-pic" href="javascript:void(0)"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+            <span class="ml-2 text-white font-medium">{{UserName}}</span><span
+                class="fas fa-angle-down ml-2 text-white"></span>
+        </a>
+        <div class="dropdown-menu-right user-dd" ngbDropdownMenu>
+            <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+                <div class="">
+                    <img src="assets/images/users/1.jpg" alt="user" class="img-circle" width="60">
+                </div>
+                <div class="m-l-10">
+                    <h4 class="m-b-0">{{UserName}}</h4>
+                
+                </div>
+            </div>
+            <!-- <a class="dropdown-item" href="javascript:void(0)">
+                <i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+            <a class="dropdown-item" href="javascript:void(0)">
+                <i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
+            <a class="dropdown-item" href="javascript:void(0)">
+                <i class="ti-email m-r-5 m-l-5"></i> Inbox</a> -->
+            <!-- <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/ResetPassword">
+                <i class="ti-settings m-r-5 m-l-5"></i> Reset Password</a>
+            <div class="dropdown-divider"></div> -->
+            <a class="dropdown-item" (click)="logout()" >
+                <i class="fa fa-power-off m-r-5 m-l-5"></i> تسجيل خروج</a>
+            <div class="dropdown-divider"></div>
+            <!-- <a class="dropdown-item" href="/authentication/login">
+                <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a> -->
+              <a class="dropdown-item" (click)="change()">{{Language}} </a>
+                   
+           <!--    <div class="dropdown-divider"></div> -->
+            <!-- <div class="p-l-30 p-10">
+                <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a>
+            </div> -->
+        </div>
+    </li>
+    <!-- ============================================================== -->
+    <!-- User profile and search -->
+    <!-- ============================================================== -->
+</ul>

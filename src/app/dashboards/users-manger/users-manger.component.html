@@ -1,0 +1,110 @@
+<!-- <p-breadcrumb [model]="Model" [home]="home"></p-breadcrumb> -->
+<p-toast [style]="{ marginTop: '80px' }" key="myToast"></p-toast>
+   
+            <button pButton pRipple label="{{'Add'|translate}}" icon="pi pi-plus" class="p-button-success p-mr-2" (click)="openNew()"></button>
+               <hr/>
+
+               <p-table   #dt  [value]="itemList"   [resizableColumns]="true" [autoLayout]="true" 
+               
+              [lazy]="true" (onLazyLoad)="onLazyLoadData($event)" 
+             >
+                  
+                 
+    <ng-template pTemplate="header">
+        <tr>
+          
+            <th hidden>id</th>
+          
+            <th >{{'Name'|translate}}</th>   
+           
+            <th >{{'Action'|translate}}</th>
+        </tr>
+    </ng-template>
+     <ng-template pTemplate="body" let-Model>
+        <tr>
+           
+            <td hidden>{{Model.id}}</td>
+           
+         
+            <td>{{Model.FullName}}</td>
+            
+            <td>
+                <a (click)="showDialog(Model)" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+              
+                <a (click)="remove(Model)" class="btn btn-danger btn-sm" ><i class="fas fa-trash-alt"></i></a>
+               
+               
+              </td>
+           
+        </tr>
+        
+    </ng-template>
+    
+</p-table>
+<p-paginator alwaysShow="true" showCurrentPageReport="true" [rows]="5"
+[rowsPerPageOptions]="[5,10,15]"  [totalRecords]="totalRowCount"
+ (onPageChange)="paginate($event)"></p-paginator>
+
+<p-dialog header="" [(visible)]="Dialog" [focusOnShow]="false" [responsive]="true" showEffect="fade" [modal]="true"   styleClass="mydialog">
+         <form novalidate (ngSubmit)="save()" [formGroup]="signupForm">
+      
+         
+                <div class="form-group">
+                    <input  ng-model="userName" formControlName="userName"
+                        class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                        type="text" placeholder="userName" name="userName" autocomplete="off" />
+                    <div *ngIf="signupForm.controls.userName.invalid&&signupForm.controls.userName.touched"
+                        class="alert alert-danger mt-2"> name not valid</div>
+                </div>
+                <div class="form-group">
+                    <label> اسم الاول</label>
+                    <input  ng-model="fullName" formControlName="fullName"
+                        class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                        type="text" name="fullName" autocomplete="off" />
+                    
+                </div>
+                <div class="form-group">
+                    <input ng-model="email" formControlName="email"
+                        class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                        type="email" placeholder="Email" name="email" autocomplete="off" />
+                    <div *ngIf="signupForm.controls.email.invalid&&signupForm.controls.email.touched"
+                        class="alert alert-danger mt-2">email not valid</div>
+                </div>
+                <!--end::Form group-->
+
+                    <!--begin::Form group-->
+                    <div *ngIf="show" class="form-group">
+                        <input ng-model="password" formControlName="password"
+                            class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                            type="password" placeholder="Password" name="password" autocomplete="off" />
+                        <div *ngIf="signupForm.controls.password.invalid&&signupForm.controls.password.touched"
+                            class="alert alert-danger mt-2">password not valid</div>
+                    </div>
+                    <!--end::Form group-->
+                    <!--begin::Form group-->
+                    <div *ngIf="show" class="form-group">
+                        <input ng-model="confirmPassword" formControlName="confirmPassword"
+                            class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                            type="password" placeholder="Confirm password" name="confirmPassword"
+                            autocomplete="off" match="password" />
+                        <div *ngIf="signupForm.controls.confirmPassword.invalid&&signupForm.controls.confirmPassword.touched"
+                            class="alert alert-danger mt-2">password not match</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="roles">Roles</label>
+                       
+                        <p-dropdown [options]="identityrole"  placeholder=" {{'select'|translate}}" name="roles" formControlName="roles"  [filter]="true"></p-dropdown>
+
+                    </div>
+                  
+       
+        <button type="submit" class="btn btn-primary"[disabled]="signupForm.invalid" >{{'save'|translate}}</button> 
+        <button type="button" class="btn btn-secondary" (click)="cancel()">{{'cancel'|translate}}</button>
+      </form>
+</p-dialog>
+
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">{{'PleaseWait'|translate}} </p>  
+    </ngx-spinner> 
+    <p-confirmDialog [style]="{width: '50vw'}" ></p-confirmDialog>
